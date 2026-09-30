@@ -1,0 +1,93 @@
+.container (navy background, padding 8, gap 34)
+├ box1
+└ .column (gap 34)
+   ├ .row: box2, box3
+   └ .row (gap 34)
+      ├ .column (gap 34)
+      │   ├ .row: box4, box5
+      │   └ .row: box6, box7
+      └ box8
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Layout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="box" id="box1"></div>
+
+        <div class="column">
+
+            <div class="row">
+                <div class="box" id="box2"></div>
+                <div class="box" id="box3"></div>
+            </div>
+
+            <div class="row">
+                <div class="column">
+                    <div class="row">
+                        <div class="box" id="box4"></div>
+                        <div class="box" id="box5"></div>
+                    </div>
+                    <div class="row">
+                        <div class="box" id="box6"></div>
+                        <div class="box" id="box7"></div>
+                    </div>
+                </div>
+
+                <div class="box" id="box8"></div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
+
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #0d0d0d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    gap: 34px;
+    padding: 8px;
+    background-color: #24284a;
+}
+
+.row {
+    display: flex;
+    gap: 34px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+}
+
+.box {
+    flex-shrink: 0;
+}
+
+#box1 { width: 335px; height: 734px; background-color: #55b154; }
+#box2 { width: 718px; height: 222px; background-color: #55b154; }
+#box3 { width: 340px; height: 222px; background-color: #f83333; }
+#box4 { width: 342px; height: 222px; background-color: #ffa63d; }
+#box5 { width: 342px; height: 222px; background-color: #f83333; }
+#box6 { width: 342px; height: 222px; background-color: #f83333; }
+#box7 { width: 342px; height: 222px; background-color: #ffa63d; }
+#box8 { width: 340px; height: 478px; background-color: #55b154; }
+
+
